@@ -1,0 +1,863 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Noto+Serif+Display:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+@font-face {
+  .material-icons {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+  }
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+  color: #231815;
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.pc {
+  display: block;
+}
+
+.mob {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .pc {
+    display: none;
+  }
+  .mob {
+    display: block;
+  }
+}
+
+h2, h3, h4, h5, h6, p {
+  color: #fff;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 160%;
+  font-weight: 600;
+  letter-spacing: 10px;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 160%;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 600px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 160%;
+  font-weight: 600;
+  letter-spacing: 6px;
+}
+
+@media (max-width: 600px) {
+  h4 {
+    font-size: 18px;
+  }
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 160%;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 600px) {
+  h5 {
+    font-size: 16px;
+  }
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  h6 {
+    font-size: 16px;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 160%;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+input, button, select, textarea {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  border: 0;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.popup {
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.popup .popup_content {
+  text-align: center;
+  background-color: #fff;
+  color: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-weight: 500;
+}
+
+.popup .popup_content.popup_img {
+  width: 1200px;
+  height: 820px;
+  background: none;
+}
+
+@media (max-width: 1280px) {
+  .popup .popup_content.popup_img {
+    width: calc(100% - 80px);
+    height: auto;
+    max-height: 50vh;
+    margin: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .popup .popup_content.popup_img {
+    width: calc(100% - 40px);
+  }
+}
+
+.popup .popup_content.popup_img h5 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.popup .popup_content.popup_img p {
+  font-size: 16px;
+  line-height: 120%;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.popup .popup_content.popup_message {
+  width: 320px;
+  height: 60px;
+  line-height: 60px;
+  font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.popup .popup_content .close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 10;
+  right: 6px;
+  top: 6px;
+  text-align: center;
+}
+
+.popup .popup_content .close i {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.popup .popup_content .close:hover {
+  cursor: pointer;
+}
+
+.popup.is_acted {
+  display: block;
+}
+
+.popup_close {
+  position: absolute;
+  z-index: 200;
+  right: 20px;
+  top: 20px;
+}
+
+.popup_close span {
+  color: #fff;
+  font-size: 32px;
+}
+
+.popup_close:hover {
+  cursor: pointer;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .fp-overflow {
+    height: auto;
+  }
+}
+
+.section,
+.slide {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+@media (max-width: 960px) {
+  .section,
+  .slide {
+    background-attachment: scroll;
+  }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .section, .slide {
+    background-attachment: scroll;
+  }
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+}
+
+section .fp-overflow {
+  width: 100%;
+}
+
+section .fp-overflow * {
+  margin: 0 auto;
+}
+
+section .theme1 {
+  background-image: url(../img/theme1_bg.png);
+}
+
+section .theme7 {
+  background-image: url(../img/theme1_bg.png);
+}
+
+@media (max-width: 960px) {
+  section .theme1 {
+    background-image: url(../img/theme1_bg_mob.png);
+  }
+  section .theme7 {
+    background-image: url(../img/theme1_bg_mob.png);
+  }
+}
+
+section .theme {
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+section .theme1 .fp-overflow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .fp-overflow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 40px;
+    height: calc(100vh - 40px);
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+section .theme1 .photo {
+  width: calc(800 / 1920 * 100%);
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 540px);
+}
+
+@media (max-width: 960px) {
+  section .theme1 .photo {
+    width: calc(458 / 680 * 100%);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+section .theme1 .teams {
+  width: 220px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  section .theme1 .teams {
+    width: 160px;
+    bottom: 40px;
+  }
+}
+
+section .theme1 .contentbox {
+  width: calc(100% - 540px);
+}
+
+@media (max-width: 960px) {
+  section .theme1 .contentbox {
+    width: calc(920 / 1080 * 100%);
+  }
+}
+
+section .theme1 .contentbox .logo {
+  width: calc(480 / 1280 * 100%);
+}
+
+@media (max-width: 960px) {
+  section .theme1 .contentbox .logo {
+    width: calc(335 / 680 * 100%);
+  }
+}
+
+section .theme1 .contentbox .subtitle {
+  width: calc(480 / 1280 * 100%);
+  margin-top: 20px;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .contentbox .subtitle {
+    width: calc(190 / 680 * 100%);
+    margin-top: 10px;
+  }
+}
+
+section .theme1 .formbox {
+  width: 540px;
+  position: relative;
+  z-index: 1;
+  padding: 0 40px;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 20px;
+  }
+}
+
+section .theme1 .formbox .logo {
+  width: calc(300 / 600 * 100%);
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .logo {
+    display: none;
+  }
+}
+
+section .theme1 .formbox .form {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form {
+    width: 100%;
+  }
+}
+
+section .theme1 .formbox .form hr {
+  border: 0;
+  border-top: 1px solid #fff;
+  margin: 40px 0;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form hr {
+    margin: 20px 0;
+  }
+}
+
+section .theme1 .formbox .form .item {
+  width: 100%;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+section .theme1 .formbox .form .item.info label {
+  width: 60px;
+  letter-spacing: 10px;
+  color: #fff;
+}
+
+section .theme1 .formbox .form .item.info input, section .theme1 .formbox .form .item.info select, section .theme1 .formbox .form .item.info textarea {
+  width: calc(100% - 60px);
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 8px;
+}
+
+section .theme1 .formbox .form .item.info input:checked, section .theme1 .formbox .form .item.info input:focus, section .theme1 .formbox .form .item.info select:checked, section .theme1 .formbox .form .item.info select:focus, section .theme1 .formbox .form .item.info textarea:checked, section .theme1 .formbox .form .item.info textarea:focus {
+  outline: 0;
+  border: 0;
+}
+
+section .theme1 .formbox .form .item.info .checkbox_box {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form .item.info .checkbox_box:nth-child(1) {
+    margin-right: 10px;
+  }
+}
+
+section .theme1 .formbox .form .item.info .checkbox_box h6 {
+  width: 60px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 10px;
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form .item.info .checkbox_box h6 {
+    display: inline-block;
+  }
+}
+
+section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group label {
+  width: auto;
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+  vertical-align: middle;
+  line-height: 1;
+  color: #fff;
+}
+
+@media (max-width: 1400px) {
+  section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group label {
+    font-size: 14px;
+  }
+}
+
+section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  padding: 0;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group input[type="checkbox"] {
+    margin-right: 4px;
+  }
+}
+
+section .theme1 .formbox .form .item.info .checkbox_box .checkbox-group input[type="checkbox"]:checked {
+  background-image: url(../img/check.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+section .theme1 .formbox .form .item.term {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+section .theme1 .formbox .form .item.term label {
+  color: #fff;
+  margin: 0;
+  display: block;
+  width: calc(100% - 30px);
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 14px;
+}
+
+section .theme1 .formbox .form .item.term input, section .theme1 .formbox .form .item.term select, section .theme1 .formbox .form .item.term textarea {
+  width: calc(100% - 60px);
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+section .theme1 .formbox .form .item.term input:checked, section .theme1 .formbox .form .item.term input:focus, section .theme1 .formbox .form .item.term select:checked, section .theme1 .formbox .form .item.term select:focus, section .theme1 .formbox .form .item.term textarea:checked, section .theme1 .formbox .form .item.term textarea:focus {
+  outline: 0;
+  border: 0;
+}
+
+section .theme1 .formbox .form .item.term .checkbox_box {
+  width: 100%;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .theme1 .formbox .form .item.term .checkbox_box h6 {
+  width: 120px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 6px;
+}
+
+@media (max-width: 420px) {
+  section .theme1 .formbox .form .item.term .checkbox_box h6 {
+    width: 90px;
+    letter-spacing: 1px;
+  }
+}
+
+section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group {
+  width: calc(100% - 120px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 420px) {
+  section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group {
+    width: calc(100% - 90px);
+  }
+}
+
+section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group label {
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin: 0 0 0 6px;
+  cursor: pointer;
+  vertical-align: middle;
+  line-height: 1;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 420px) {
+  section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group label {
+    letter-spacing: 0px;
+    margin: 0 0 0 2px;
+  }
+}
+
+section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  padding: 0;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group input[type="checkbox"] {
+    margin-right: 4px;
+  }
+}
+
+section .theme1 .formbox .form .item.term .checkbox_box .checkbox-group input[type="checkbox"]:checked {
+  background-image: url(../img/check.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+section .theme1 .formbox .form .item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  padding: 0;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  section .theme1 .formbox .form .item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 960px) {
+  section .theme1 .formbox .form .item input[type="checkbox"] {
+    margin-right: 4px;
+  }
+}
+
+section .theme1 .formbox .form .item input[type="checkbox"]:checked {
+  background-image: url(../img/check.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+section .theme1 .formbox .form .item button {
+  width: 100%;
+  display: block;
+  padding: 0;
+  background: none;
+}
+
+section .theme1 .formbox .form .item button:hover {
+  cursor: pointer;
+}
+
+section .theme1:before {
+  content: "";
+  width: 540px;
+  height: 100vh;
+  background: #DE620E;
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 960px) {
+  section .theme1:before {
+    display: none;
+  }
+}
+
+section .theme7 .contentbox {
+  width: calc(920 / 1920 * 100%);
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 960px) {
+  section .theme7 .contentbox {
+    width: calc(544 / 680 * 100%);
+  }
+}
+
+section .theme7 .contentbox .logo {
+  width: calc(300 / 1000 * 100%);
+}
+
+@media (max-width: 960px) {
+  section .theme7 .contentbox .logo {
+    width: calc(220 / 544 * 100%);
+  }
+}
+
+section .theme7 .contentbox .title {
+  width: calc(800 / 1000 * 100%);
+  margin-top: 40px;
+}
+
+@media (max-width: 960px) {
+  section .theme7 .contentbox .title {
+    width: calc(448 / 544 * 100%);
+  }
+}
+
+section .theme7 .contentbox .subtitle {
+  width: calc(1000 / 1000 * 100%);
+  padding: 28px 0;
+  margin: 40px 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+@media (max-width: 960px) {
+  section .theme7 .contentbox .subtitle {
+    width: calc(544 / 544 * 100%);
+    padding: 20px 30px;
+    margin: 30px 0;
+  }
+}
+
+section .theme7 .contentbox .numtitle {
+  width: calc(420 / 1000 * 100%);
+}
+
+@media (max-width: 960px) {
+  section .theme7 .contentbox .numtitle {
+    width: calc(222 / 544 * 100%);
+  }
+}
+
+section .theme7 .contentbox .num {
+  margin-top: 36px;
+}
+
+section .theme7 .contentbox .num span {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 200px;
+  color: #fff;
+  line-height: 0.8;
+}
+/*# sourceMappingURL=style.css.map */

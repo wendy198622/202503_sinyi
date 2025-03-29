@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>新亦建設</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+    <!-- <meta property="og:image" content="https://www.zyed.com.tw/VITRUVIUS/img/1200x630.png"> -->
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section id="fullpage" class="fullpage">
+        <div class="section theme theme7" style="padding: 0;">
+            <div class="contentbox">
+                <div class="logo wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s">
+                    <img src="img/logo.svg" alt="">
+                </div>
+                <div class="title wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s">
+                    <img src="img/theme7_title.svg" alt="">
+                </div>
+                <div class="subtitle wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s">
+                    <img class="pc" src="img/theme7_subtitle.svg" alt="">
+                    <img class="mob" src="img/theme7_subtitle_mob.svg" alt="">
+                </div>
+                <div class="numtitle wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s">
+                    <img src="img/theme7_numtitle.svg" alt="">
+                </div>
+                <div class="num wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s">
+                    <span>583</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        new WOW().init();
+
+        var myFullpage = new fullpage('#fullpage', {
+            anchors: ['01'],
+            sectionsColor: ['#fff'],
+            navigation: false,
+            scrollBar: true,
+            autoScrolling: true,
+            responsiveWidth: 960,
+            onResize: function() {
+                if (window.innerWidth < 961) {
+                    fullpage_api.setAutoScrolling(false); // 停用 autoScrolling
+                } else {
+                    fullpage_api.setAutoScrolling(true);  // 啟用 autoScrolling
+                }
+            }
+        });
+
+    });
+        
+		// $('.send').on('click', function () {
+		// 	$('.popup_send').addClass('is_acted');
+		// 	setTimeout(() => {
+		// 		$('.popup_send').removeClass('is_acted');
+		// 	}, 5000)
+		// });
+
+
+</script>
+
+
+
+</html>

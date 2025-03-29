@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>新亦建設</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+    <!-- <meta property="og:image" content="https://www.zyed.com.tw/VITRUVIUS/img/1200x630.png"> -->
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section id="fullpage" class="fullpage">
+        <div class="section theme theme1" style="padding: 0;">
+            <div class="contentbox">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="">
+                </div>
+                <div class="subtitle">
+                    <img class="pc" src="img/theme1_subtitle.svg" alt="">
+                    <img class="mob" src="img/theme1_subtitle_mob.svg" alt="">
+                </div>
+            </div>
+            <div class="formbox">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="">
+                </div>
+                <div class="form">
+                    <hr>
+                    <div class="item info wow fadeInUp" data-wow-delay=".3s">
+                        <label for="name">姓名</label>
+                        <input type="text" v-model="name" name="name" placeholder="" required />
+                    </div>
+                    <div class="item info wow fadeInUp" data-wow-delay=".5s">
+                        <label for="phone">電話</label>
+                        <input type="text" v-model="phone" name="phone" placeholder="" required />
+                    </div>
+                    <div class="item info wow fadeInUp" data-wow-delay=".5s">
+                        <div class="checkbox_box">
+                            <h6>房型</h6>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="type1">2房</label>
+                                <label><input type="checkbox" value="type2">3房</label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="item term">
+                        <input type="checkbox" value="privacy">
+                        <label for="privacy">我同意透過電話方式與我聯絡</label>
+                    </div>
+                    <div class="item term">
+                        <div class="checkbox_box">
+                            <h6>方便聯絡時間</h6>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="time1">早上</label>
+                                <label><input type="checkbox" value="time2">中午</label>
+                                <label><input type="checkbox" value="time3">下午</label>
+                                <label><input type="checkbox" value="time4">晚上</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item wow fadeInUp" data-wow-delay=".5s">
+                        <button class="send wow fadeInUp" data-wow-delay="1.5s">
+                            <img src="img/theme1_btn.svg" alt="">
+                        </button>   
+                    </div>                   
+                </div>
+            </div>
+            <div class="photo">
+                <img src="img/theme1_photo.png" alt="">
+            </div>
+            <div class="teams">
+                <img src="img/theme1_teams.svg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        new WOW().init();
+
+        var myFullpage = new fullpage('#fullpage', {
+            anchors: ['01', '02', '03', '04', '05', '06'],
+            sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
+            navigation: false,
+            scrollBar: true,
+            autoScrolling: true,
+            responsiveWidth: 960,
+            onResize: function() {
+                if (window.innerWidth < 961) {
+                    fullpage_api.setAutoScrolling(false); // 停用 autoScrolling
+                } else {
+                    fullpage_api.setAutoScrolling(true);  // 啟用 autoScrolling
+                }
+            }
+        });
+
+    });
+        
+		// $('.send').on('click', function () {
+		// 	$('.popup_send').addClass('is_acted');
+		// 	setTimeout(() => {
+		// 		$('.popup_send').removeClass('is_acted');
+		// 	}, 5000)
+		// });
+
+
+</script>
+
+
+
+</html>
