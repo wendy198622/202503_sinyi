@@ -379,8 +379,7 @@ section .theme1 .teams {
 
 @media (max-width: 800px) {
   section .theme1 .teams {
-    width: 160px;
-    bottom: 40px;
+    width: 140px;
   }
 }
 
